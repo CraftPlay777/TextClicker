@@ -92,7 +92,7 @@ public class RunnerService extends Service {
                 updateNotification("Buscando \"" + current.text + "\" (click " + (index + 1) + ")");
                 handler.postDelayed(this, 500);
             } else {
-                String motivo = s == null ? "accesibilidad apagada" : "texto no encontrado";
+                String motivo = s == null ? "accesibilidad apagada" : "texto no encontrado | " + s.lastInfo;
                 Store.log(RunnerService.this, "Click " + (index + 1) + " falló: \"" + current.text + "\" (" + motivo + ")");
                 index++;
                 next();
